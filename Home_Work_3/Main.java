@@ -17,7 +17,7 @@ public class Main {
     // Кодировка по умл.
     private static String cp = System.getProperty("console.encoding","Cp866");
 
-    private static final String DATE_REGEX = "^(0[1-9]|[12][0-9]|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$";
+    private static final String DATE_REGEX = "^(0[1-9]|[12][0-9]|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$"; // для использования регуляных выражений
     private static final String PHONE_REGEX = "^\\d+$";
     private static final String GENDER_REGEX = "^[fm]$";
 
@@ -26,7 +26,7 @@ public class Main {
             // чтение данных с указанием кодировки, для решения проблем с кириллицей
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, cp));
 
-            System.out.println("Введите данные (Фамилия Имя Отчество Дата_рождения Номер_телефона Пол):");
+            System.out.println("Введите данные (Фамилия Имя Отчество Дата_рождения(формат dd.mm.yyyy) Номер_телефона Пол(символ латиницей f или m)):");
             String inputData = reader.readLine();
 
             String[] data = inputData.split(" ");
